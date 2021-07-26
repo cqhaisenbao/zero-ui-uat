@@ -4,8 +4,13 @@ import Button, {ButtonSize} from "./components/Button/Button";
 function App() {
     return (
         <div className="App">
-            <Button disabled children={123}/>
-            <Button children={'baidu'} btnType="primary" size={ButtonSize.Large}/>
+            <br/>
+            <Button children={123}/>
+            <Button size={ButtonSize.Small} children="small"/>
+            <Button children={'baidu'} btnType="primary"/>
+            <Button children={'baidu'} btnType="danger"/>
+            <Button children={'baidu'} btnType="link" href='www.baidu.com'/>
+
         </div>
     );
 }
