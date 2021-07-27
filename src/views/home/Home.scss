@@ -2,21 +2,22 @@ $green: #fff;
 $border-radius: 4px;
 $color: #000000de;
 .topnavAndBanner {
-  background-image: linear-gradient(270deg, #8146b4, #6990f6);
+  background: #44A08D;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #093637, #44A08D);  /* Chrome 10-25, Safari 5.1-6 */
   clip-path: ellipse(80% 60% at 50% 40%);
 }
 
-.topnavAndBanner ::v-deep(.menu) {
-  color: white;
-
-  a:hover {
-    color: #c8c7c7;
-  }
-}
-
-.topnavAndBanner ::v-deep(.topnav) {
-  background: linear-gradient(270deg, #8146b4, #6990f6)
-}
+//.topnavAndBanner ::v-deep(.menu) {
+//  color: white;
+//
+//  a:hover {
+//    color: #c8c7c7;
+//  }
+//}
+//
+//.topnavAndBanner ::v-deep(.topnav) {
+//  background: linear-gradient(270deg, #8146b4, #6990f6)
+//}
 
 .features {
   margin: 64px auto;
