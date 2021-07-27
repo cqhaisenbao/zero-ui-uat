@@ -1,16 +1,19 @@
 import Topnav from "../components/Topnav";
 import {Link, Route, useRouteMatch} from "react-router-dom";
 import './Doc.scss';
-import React from "react";
+import React, {useContext} from "react";
 import {ButtonDemo} from "../demos/buttonDemo/ButtonDemo";
+import {C} from "../../App";
 
 const Doc = () => {
     const {url} = useRouteMatch();
+    const [menuVisible] = useContext(C);
 
     return (
         <div className="doc-layout">
-            <Topnav/>
+            <Topnav toggleMenuButtonVisible={true}/>
             <div className="content">
+                {menuVisible &&
                 <aside>
                     <h3>文档</h3>
                     <ol>
@@ -72,6 +75,7 @@ const Doc = () => {
                         </li>
                     </ol>
                 </aside>
+                }
                 <main>
                     <Route path="/doc/button" component={ButtonDemo}/>
                 </main>
