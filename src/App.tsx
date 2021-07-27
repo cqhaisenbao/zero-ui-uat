@@ -1,14 +1,18 @@
 import React from 'react';
-import Button, {ButtonSize} from "./components/Button/Button";
+import './index.scss';
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import Home from "./views/home/Home";
+import Doc from "./views/doc/Doc";
 
 function App() {
     return (
         <div className="App">
-            <Button onClick={e => console.log(e)} children={123}/>
-            <Button size={ButtonSize.Small} loading children="small"/>
-            <Button children={'baidu'} loading btnType="primary"/>
-            <Button children={'baidu'} loading btnType="danger"/>
-            <Button children={'baidu'} btnType="link" href="www.baidu.com"/>
+            <BrowserRouter>
+                <Switch>
+                    <Route path="/" exact component={Home}/>
+                    <Route path="/doc" component={Doc}/>
+                </Switch>
+            </BrowserRouter>
         </div>
     );
 }
