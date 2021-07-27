@@ -5,9 +5,9 @@ function App() {
     return (
         <div className="App">
             <Button onClick={e => console.log(e)} children={123}/>
-            <Button size={ButtonSize.Small} children="small"/>
-            <Button children={'baidu'} btnType="primary"/>
-            <Button children={'baidu'} btnType="danger"/>
+            <Button size={ButtonSize.Small} loading children="small"/>
+            <Button children={'baidu'} loading btnType="primary"/>
+            <Button children={'baidu'} loading btnType="danger"/>
             <Button children={'baidu'} btnType="link" href="www.baidu.com"/>
         </div>
     );

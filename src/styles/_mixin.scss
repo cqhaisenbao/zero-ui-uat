@@ -4,14 +4,7 @@
   border-radius: $border-raduis;
 }
 
-@mixin button-style(
-  $background,
-  $border,
-  $color,
-  $hover-background: lighten($background, 7.5%),
-  $hover-border: lighten($border, 10%),
-  $hover-color: $color,
-) {
+@mixin button-style($background, $border,$color,$hover-background: lighten($background, 7.5%), $hover-border: lighten($border, 10%), $hover-color: $color, $loading-color:$color) {
   color: $color;
   background: $background;
   border-color: $border;
@@ -21,6 +14,7 @@
     border-color: $hover-border;
   }
   &:focus, &.focus {
+    outline: none;
     color: $hover-color;
     background: $hover-background;
     border-color: $hover-border;
@@ -29,6 +23,21 @@
     color: $color;
     background: $background;
     border-color: $border;
+  }
+  .loading {
+    width: .9rem;
+    height: .9rem;
+    display: inline-block;
+    margin-right: 6px;
+    border-radius: 8px;
+    border-color: $loading-color $loading-color $loading-color transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: zero-spin 1s infinite linear;
+    @keyframes zero-spin {
+      0% {transform: rotate(0deg)}
+      100% {transform: rotate(360deg)}
+    }
   }
 }
 

@@ -1,6 +1,8 @@
 .btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  display: inline-block;
   font-weight: $btn-font-weight;
   color: $body-color;
   white-space: nowrap;
@@ -42,7 +44,7 @@
 }
 
 .btn-default {
-  @include button-style($white, $gray-400, $body-color, $white, $primary, $primary)
+  @include button-style($white, $gray-400, $body-color, $white, $primary, $primary, $primary)
 }
 
 .btn-link {

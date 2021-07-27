@@ -15,6 +15,7 @@ interface BaseButtonProps {
     btnType?: ButtonType;
     children: React.ReactNode;
     href?: string;
+    loading?: boolean;
 }
 
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>
@@ -22,11 +23,12 @@ type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
 export const Button: FC<ButtonProps> = (props) => {
-    const {btnType, className, disabled, size, children, href, ...restProps} = props;
+    const {btnType, className, disabled, size, children, loading, href, ...restProps} = props;
 
     const classes = classNames('btn', className, {
         [`btn-${btnType}`]: btnType,
         [`btn-${size}`]: size,
+        'loading': loading,
         'disabled': (btnType === 'link') && disabled
     });
     if (btnType === 'link' && href) {
@@ -38,6 +40,7 @@ export const Button: FC<ButtonProps> = (props) => {
     } else {
         return (
             <button className={classes} disabled={disabled} {...restProps}>
+                {loading && <span className="loading"/>}
                 {children}
             </button>
         );
