@@ -2,7 +2,7 @@ import Topnav from "../components/Topnav";
 import {Link, Route, useRouteMatch} from "react-router-dom";
 import './Doc.scss';
 import React from "react";
-import {ButtonDemo} from "../demos/ButtonDemo";
+import {ButtonDemo} from "../demos/buttonDemo/ButtonDemo";
 
 const Doc = () => {
     const {url} = useRouteMatch();

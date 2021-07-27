@@ -17,7 +17,7 @@ export const Topnav: React.FC<TopnavProps> = (props) => {
             <div className="topnav">
                 <Link to="/" className="logo">
                     <svg className="icon">
-                        <use xlinkHref="#icon-mianxingmihoutao"/>
+                        <use xlinkHref="#icon-shandian"/>
                     </svg>
                 </Link>
                 <ul className="menu">
